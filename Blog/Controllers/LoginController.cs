@@ -28,7 +28,7 @@ namespace Blog.Controllers
 
                 if (token != null) 
                 {
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Blogs");
                 }
 
                 else
