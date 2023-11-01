@@ -1,3 +1,26 @@
-﻿<div>
+﻿@model IEnumerable<BlogViewModel>
+
+<div>
     <h2 class="text-center">Blogs</h2>
+
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4 py-4">
+                <div class="card" >
+                    <div class="card-header p-0 m-0">
+                        <img src="@item.ThumbnailImageUrl" class="card-img-top" alt="...">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Title</h5>
+                        <p class="card-text">@item.Description</p>
+                    </div>
+                    <div class="card-footer">
+                        <h6>@item.Author</h6>
+                        <p>@item.PublishedDate.ToShortDateString()</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
 </div>
